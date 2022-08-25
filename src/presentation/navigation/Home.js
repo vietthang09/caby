@@ -1,17 +1,22 @@
 import { ScrollView, Text, View } from "react-native";
 import Styles from "../../core/style/Styles";
 import Slider from "../components/Slider";
+import TrendingItem from "../components/TrendingItem";
+import TrendingSectionList from "../container/TrendingSectionList";
 
 const Home = () => {
   return (
     <View style={Styles.container}>
       <ScrollView>
-        {/* Slider */}
+        {/* Slider Section */}
         <Slider />
-        {/* Trending */}
-        <Text style={Styles.text_heading}>Top Trending</Text>
-        {/* Categories */}
-        <Text style={Styles.text_heading}>Categories</Text>
+        {/* Trending Section */}
+        <View>
+          <Text style={Styles.text__heading}>Top Trending</Text>
+          <TrendingSectionList />
+        </View>
+        {/* Categories Section */}
+        <Text style={Styles.text__heading}>Categories</Text>
       </ScrollView>
     </View>
   );

@@ -9,14 +9,25 @@ const Styles = StyleSheet.create({
     backgroundColor: ColorScheme.background,
   },
 
-  text_heading: {
+  text__heading: {
     paddingVertical: 10,
     color: ColorScheme.white,
     fontSize: 20,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
 
-  // Slider
+  text__title: {
+    color: ColorScheme.secondary,
+    fontSize: 16,
+    fontWeight: "600",
+  },
+  text__sub_title: {
+    color: ColorScheme.white,
+    fontSize: 13,
+    fontWeight: "500",
+  },
+
+  // Slider Section
   slider__container: {
     flex: 1,
   },
@@ -40,7 +51,22 @@ const Styles = StyleSheet.create({
     fontSize: 23,
     color: "white",
   },
-  // End Slider
+  // End Slider Section
+
+  // Trending Section
+  treding__item_wrapper: {
+    alignContent: "center",
+    marginEnd: 10,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  trending__item_image: {
+    width: HEIGHT * 0.25,
+    height: HEIGHT * 0.25,
+    resizeMode: "cover",
+    borderRadius: 16,
+  },
+  // End Trending Section
 });
 
 export default Styles;
