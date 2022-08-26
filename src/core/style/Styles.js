@@ -54,7 +54,7 @@ const Styles = StyleSheet.create({
   // End Slider Section
 
   // Trending Section
-  treding__item_wrapper: {
+  trending__item_wrapper: {
     alignContent: "center",
     marginEnd: 10,
     justifyContent: "center",
@@ -67,6 +67,30 @@ const Styles = StyleSheet.create({
     borderRadius: 16,
   },
   // End Trending Section
+
+  // Categoris Section
+  categories__wrapper: {
+    position: "relative",
+  },
+  categories__item_wrapper: {
+    justifyContent: "center",
+    flex: 1,
+    marginBottom: 10,
+    alignItems: "center",
+  },
+  categories__item_image: {
+    width: HEIGHT * 0.25,
+    height: HEIGHT * 0.25,
+    resizeMode: "cover",
+    borderRadius: 16,
+  },
+  categories__title: {
+    color: ColorScheme.white,
+    fontSize: 18,
+    fontWeight: "700",
+    position: "absolute",
+  },
+  // End Categoris Section
 });
 
 export default Styles;

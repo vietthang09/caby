@@ -1,9 +1,9 @@
 const { Text } = require("react-native")
 
-const Favorite = () => {
+const Favourite = () => {
     return (
         <Text>Favorite</Text>
     );
 }
 
-export default Favorite;
+export default Favourite;

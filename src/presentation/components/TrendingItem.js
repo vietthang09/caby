@@ -3,7 +3,7 @@ import Styles from "../../core/style/Styles";
 
 const TrendingItem = () => {
   return (
-    <View style={Styles.treding__item_wrapper}>
+    <View style={Styles.trending__item_wrapper}>
       <Image
         style={Styles.trending__item_image}
         source={{

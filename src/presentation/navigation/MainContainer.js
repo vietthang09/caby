@@ -4,8 +4,8 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import ColorScheme from "../../core/style/ColorScheme";
 import Home from "./Home";
 import Trending from "./Trending";
-import Favorite from "./Favorite";
 import Search from "./Search";
+import Favourite from "./Favourite";
 const Tab = createBottomTabNavigator();
 
 const MainContainer = () => {
@@ -23,7 +23,7 @@ const MainContainer = () => {
               iconName = focused ? "home" : "home-outline";
             } else if (rn === "Trending") {
               iconName = focused ? "flame" : "flame-outline";
-            } else if (rn === "Favorite") {
+            } else if (rn === "Favourite") {
               iconName = focused ? "heart" : "heart-outline";
             } else if (rn === "Search") {
               iconName = focused ? "search" : "search-outline";
@@ -35,7 +35,7 @@ const MainContainer = () => {
       >
         <Tab.Screen name="Home" component={Home} />
         <Tab.Screen name="Trending" component={Trending} />
-        <Tab.Screen name="Favorite" component={Favorite} />
+        <Tab.Screen name="Favourite" component={Favourite} />
         <Tab.Screen name="Search" component={Search} />
       </Tab.Navigator>
     </NavigationContainer>
