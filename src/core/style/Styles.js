@@ -26,6 +26,11 @@ const Styles = StyleSheet.create({
     fontSize: 13,
     fontWeight: "500",
   },
+  text__tiny: {
+    color: ColorScheme.white,
+    fontSize: 11,
+    fontWeight: "500",
+  },
 
   // Slider Section
   slider__container: {
@@ -90,7 +95,49 @@ const Styles = StyleSheet.create({
     fontWeight: "700",
     position: "absolute",
   },
-  // End Categoris Section
+  // End Categories Section
+
+  // Music Item
+  music__item_wrapper: {
+    marginTop: 10,
+    height: 80,
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  music__item_image: {
+    width: 80,
+    height: 80,
+    resizeMode: "cover",
+    borderRadius: 8,
+  },
+  music__item_body_wrapper: {
+    marginLeft: 10,
+    flexDirection: "row",
+    flex: 1,
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  music__item_title: {
+    color: ColorScheme.white,
+    fontSize: 16,
+    fontWeight: "700",
+  },
+  music__item_views: {
+    marginTop: 5,
+    color: ColorScheme.white,
+    fontSize: 11,
+    fontWeight: "100",
+  },
+  music__item_favourite: {
+    fontSize: 26,
+    color: ColorScheme.white,
+  },
+  music__item_menu: {
+    marginLeft: 10,
+    fontSize: 14,
+    color: ColorScheme.white,
+  },
+  // End Music Item
 });
 
 export default Styles;
