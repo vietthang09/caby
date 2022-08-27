@@ -138,6 +138,24 @@ const Styles = StyleSheet.create({
     color: ColorScheme.white,
   },
   // End Music Item
+
+  // Search Screen
+  search_bar__wrapper: {
+    backgroundColor: ColorScheme.white,
+    flexDirection: "row",
+    alignItems: "center",
+    borderRadius: 8,
+    padding: 5,
+  },
+  search_bar__icon: {
+    fontSize: 18,
+    color: ColorScheme.gray,
+    marginEnd: 10,
+  },
+  search_result__wrapper: {
+    marginTop: 10,
+  },
+  // End Search Screen
 });
 
 export default Styles;
