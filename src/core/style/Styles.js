@@ -1,4 +1,4 @@
-import { Dimensions, StyleSheet } from "react-native";
+import { Dimensions, StatusBar, StyleSheet } from "react-native";
 import ColorScheme from "./ColorScheme";
 const WIDTH = Dimensions.get("window").width;
 const HEIGHT = Dimensions.get("window").height;
@@ -7,6 +7,7 @@ const Styles = StyleSheet.create({
     padding: 8,
     flex: 1,
     backgroundColor: ColorScheme.background,
+    marginTop: StatusBar.currentHeight,
   },
 
   text__heading: {
@@ -39,6 +40,7 @@ const Styles = StyleSheet.create({
   slider__wrap: {
     width: WIDTH,
     height: HEIGHT * 0.25,
+    borderRadius: 8,
   },
   slider__wrap_dot: {
     position: "absolute",
@@ -70,6 +72,13 @@ const Styles = StyleSheet.create({
     height: HEIGHT * 0.25,
     resizeMode: "cover",
     borderRadius: 16,
+  },
+  trending__item_play: {
+    color: ColorScheme.white,
+    fontSize: 23,
+    position: "absolute",
+    bottom: 10,
+    right: 10,
   },
   // End Trending Section
 
