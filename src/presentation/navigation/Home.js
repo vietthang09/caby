@@ -1,10 +1,10 @@
+import { useEffect } from "react";
 import { ScrollView, Text, View } from "react-native";
 import Styles from "../../core/style/Styles";
 import Slider from "../components/Slider";
 import CategoriesSection from "../container/CatecoriesSection";
 import TrendingSectionList from "../container/TrendingSectionList";
-
-const Home = () => {
+const Home = ({ navigation }) => {
   return (
     <View style={Styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
@@ -14,7 +14,7 @@ const Home = () => {
         {/* Trending Section */}
         <View>
           <Text style={Styles.text__heading}>Top Trending</Text>
-          <TrendingSectionList />
+          <TrendingSectionList navigation={navigation} />
         </View>
 
         {/* Categories Section */}

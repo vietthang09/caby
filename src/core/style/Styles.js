@@ -75,7 +75,7 @@ const Styles = StyleSheet.create({
   },
   trending__item_play: {
     color: ColorScheme.white,
-    fontSize: 23,
+    fontSize: 32,
     position: "absolute",
     bottom: 10,
     right: 10,
@@ -165,6 +165,102 @@ const Styles = StyleSheet.create({
     marginTop: 10,
   },
   // End Search Screen
+
+  // Play Music Screen
+  play_music__header_wrapper: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+  play_music__header_arrow: {
+    color: ColorScheme.white,
+    fontSize: 24,
+  },
+  play_music__header_title: {
+    color: ColorScheme.white,
+    borderRadius: 16,
+    paddingHorizontal: 12,
+    paddingVertical: 5,
+    backgroundColor: ColorScheme.primary,
+    fontSize: 13,
+    fontWeight: "700",
+  },
+  play_music__header_menu: {
+    color: ColorScheme.primary,
+    fontSize: 24,
+  },
+  play_music__image_wrapper: {
+    marginVertical: 16,
+  },
+  play_music__image: {
+    width: "100%",
+    height: WIDTH - 20,
+    borderRadius: 16,
+  },
+  play_music__information_wrapper: {
+    paddingHorizontal: 10,
+  },
+  play_music__info_wrapper: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+  play_music__info_heart: {
+    color: ColorScheme.white,
+    fontSize: 24,
+  },
+  play_music__info_name: {
+    color: ColorScheme.white,
+    fontSize: 16,
+    fontWeight: "bold",
+  },
+  play_music__info_author: {
+    color: ColorScheme.white,
+    fontSize: 11,
+    fontWeight: "100",
+  },
+  play_music__info_more: {
+    color: ColorScheme.white,
+    fontSize: 24,
+  },
+  play_music__progress_wrapper: {
+    marginTop: 10,
+    flexDirection: "row",
+  },
+  play_music__progress_current: {
+    color: ColorScheme.white,
+    fontSize: 13,
+  },
+  play_music__progress_duration: {
+    color: ColorScheme.white,
+    fontSize: 13,
+  },
+  play_music__control_wrapper: {
+    marginTop: 24,
+    paddingHorizontal: 10,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+  play_music__control_action: {
+    color: ColorScheme.white,
+    fontSize: 26,
+  },
+  play_music__control_pause: {
+    color: ColorScheme.primary,
+    fontSize: 52,
+  },
+  play_music__options_wrapper: {
+    marginTop: 24,
+    marginHorizontal: 10,
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  play_music__options_icon: {
+    color: ColorScheme.white,
+    fontSize: 18,
+  },
+  // End Play Music Screen
 });
 
 export default Styles;

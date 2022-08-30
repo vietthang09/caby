@@ -1,12 +1,38 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
-import Ionicons from "react-native-vector-icons/Ionicons";
 import ColorScheme from "../../core/style/ColorScheme";
-import Home from "./Home";
-import Trending from "./Trending";
-import Search from "./Search";
 import Favourite from "./Favourite";
+import Home from "./Home";
+import PlayMusic from "./PlayMusic";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import Ionicons from "react-native-vector-icons/Ionicons";
+import Search from "./Search";
+import Trending from "./Trending";
 const Tab = createBottomTabNavigator();
+
+const HomeStack = createNativeStackNavigator();
+function HomeStackScreen() {
+  return (
+    <HomeStack.Navigator screenOptions={{ headerShown: false }}>
+      <HomeStack.Screen
+        options={{
+          statusBarColor: ColorScheme.background,
+          navigationBarColor: ColorScheme.background,
+        }}
+        name="Home"
+        component={Home}
+      />
+      <HomeStack.Screen
+        options={{
+          statusBarColor: ColorScheme.background,
+          navigationBarColor: ColorScheme.background,
+        }}
+        name="PlayMusic"
+        component={PlayMusic}
+      />
+    </HomeStack.Navigator>
+  );
+}
 
 const MainContainer = () => {
   return (
@@ -34,7 +60,7 @@ const MainContainer = () => {
           },
         })}
       >
-        <Tab.Screen name="Home" component={Home} />
+        <Tab.Screen name="Home" component={HomeStackScreen} />
         <Tab.Screen name="Trending" component={Trending} />
         <Tab.Screen name="Favourite" component={Favourite} />
         <Tab.Screen name="Search" component={Search} />
