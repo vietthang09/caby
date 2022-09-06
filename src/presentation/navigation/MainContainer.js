@@ -8,6 +8,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import Search from "./Search";
 import Trending from "./Trending";
+import PlayVideo from "./PlayVideo";
 const Tab = createBottomTabNavigator();
 
 const HomeStack = createNativeStackNavigator();
@@ -31,6 +32,78 @@ function HomeStackScreen() {
         component={PlayMusic}
       />
     </HomeStack.Navigator>
+  );
+}
+
+const TrendingStack = createNativeStackNavigator();
+function TrendingStackScreen() {
+  return (
+    <TrendingStack.Navigator screenOptions={{ headerShown: false }}>
+      <TrendingStack.Screen
+        options={{
+          statusBarColor: ColorScheme.background,
+          navigationBarColor: ColorScheme.background,
+        }}
+        name="Trending"
+        component={Trending}
+      />
+      <TrendingStack.Screen
+        options={{
+          statusBarColor: ColorScheme.background,
+          navigationBarColor: ColorScheme.background,
+        }}
+        name="PlayMusic"
+        component={PlayMusic}
+      />
+    </TrendingStack.Navigator>
+  );
+}
+
+const FavouriteStack = createNativeStackNavigator();
+function FavouriteStackScreen() {
+  return (
+    <FavouriteStack.Navigator screenOptions={{ headerShown: false }}>
+      <FavouriteStack.Screen
+        options={{
+          statusBarColor: ColorScheme.background,
+          navigationBarColor: ColorScheme.background,
+        }}
+        name="Favourite"
+        component={Favourite}
+      />
+      <FavouriteStack.Screen
+        options={{
+          statusBarColor: ColorScheme.background,
+          navigationBarColor: ColorScheme.background,
+        }}
+        name="PlayMusic"
+        component={PlayMusic}
+      />
+    </FavouriteStack.Navigator>
+  );
+}
+
+const SearchStack = createNativeStackNavigator();
+function SearchStackScreen() {
+  return (
+    <SearchStack.Navigator screenOptions={{ headerShown: false }}>
+      <SearchStack.Screen
+        options={{
+          statusBarColor: ColorScheme.background,
+          navigationBarColor: ColorScheme.background,
+        }}
+        name="Search"
+        component={Search}
+      />
+      <SearchStack.Screen
+        options={{
+          statusBarColor: ColorScheme.background,
+          navigationBarColor: ColorScheme.background,
+        }}
+        name="PlayVideo"
+        component={PlayVideo}
+      />
+    </SearchStack.Navigator>
   );
 }
 
@@ -61,9 +134,9 @@ const MainContainer = () => {
         })}
       >
         <Tab.Screen name="Home" component={HomeStackScreen} />
-        <Tab.Screen name="Trending" component={Trending} />
-        <Tab.Screen name="Favourite" component={Favourite} />
-        <Tab.Screen name="Search" component={Search} />
+        <Tab.Screen name="Trending" component={TrendingStackScreen} />
+        <Tab.Screen name="Favourite" component={FavouriteStackScreen} />
+        <Tab.Screen name="Search" component={SearchStackScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );

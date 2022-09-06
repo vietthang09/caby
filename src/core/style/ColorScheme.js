@@ -4,6 +4,7 @@ const ColorScheme = {
   secondary: "#FFE69C",
   gray: "#858585",
   white: "#ffffff",
+  dark: "#000000",
 };
 
 export default ColorScheme;

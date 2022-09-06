@@ -261,6 +261,62 @@ const Styles = StyleSheet.create({
     fontSize: 18,
   },
   // End Play Music Screen
+
+  // Play Video Screen
+  play_video__wrapper: {
+    height: HEIGHT,
+    backgroundColor: ColorScheme.white,
+  },
+  play_video__video_wrapper: {
+    borderRadius: 18,
+    alignSelf: "center",
+    width: WIDTH,
+    height: HEIGHT * 0.4,
+  },
+  play_video__detail_wrapper: {
+    padding: 10,
+  },
+  play_video__detail_title: {
+    color: ColorScheme.dark,
+    fontSize: 20,
+    fontWeight: "bold",
+  },
+  play_vieo__detail_info_wrapper: {
+    marginTop: 10,
+    flexDirection: "row",
+  },
+  play_video__detail_info_views: {
+    color: ColorScheme.gray,
+    fontSize: 13,
+  },
+  play_video__detail_info_publish: {
+    marginLeft: 10,
+    color: ColorScheme.gray,
+    fontSize: 13,
+  },
+  play_video__resolution_wrapper: {
+    marginTop: 10,
+  },
+  play_video__resolution_item: {
+    backgroundColor: ColorScheme.gray,
+    color: ColorScheme.white,
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    borderRadius: 18,
+    fontWeight: "bold",
+    marginEnd: 10,
+  },
+  play_video__resolution_item_active: {
+    backgroundColor: ColorScheme.primary,
+    color: ColorScheme.white,
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    fontWeight: "bold",
+    borderRadius: 18,
+    marginEnd: 10,
+  },
+
+  // End Play Video Screen
 });
 
 export default Styles;

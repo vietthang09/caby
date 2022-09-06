@@ -10,13 +10,13 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import ColorScheme from "../../core/style/ColorScheme";
 import { useEffect } from "react";
 const PlayMusic = ({ navigation }) => {
-  useEffect(() => {
-    navigation.getParent()?.setOptions({
-      tabBarStyle: {
-        display: "none",
-      },
-    });
-  });
+  // useEffect(() => {
+  //   navigation.getParent()?.setOptions({
+  //     tabBarStyle: {
+  //       display: "none",
+  //     },
+  //   });
+  // });
   return (
     <View style={Styles.container}>
       <ScrollView showsHorizontalScrollIndicator={false}>

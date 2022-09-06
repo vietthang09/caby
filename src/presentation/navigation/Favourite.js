@@ -3,17 +3,11 @@ import MusicItem from "../components/MusicItem";
 
 const { Text, View, ScrollView } = require("react-native");
 
-const Favourite = () => {
+const Favourite = ({ navigation }) => {
   return (
     <View style={Styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
-        <MusicItem />
-        <MusicItem />
-        <MusicItem />
-        <MusicItem />
-        <MusicItem />
-        <MusicItem />
-        <MusicItem />
+        <MusicItem navigation={navigation} />
       </ScrollView>
     </View>
   );
