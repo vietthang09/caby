@@ -139,6 +139,7 @@ const Styles = StyleSheet.create({
   },
   music__item_favourite: {
     fontSize: 26,
+    marginLeft: 10,
     color: ColorScheme.white,
   },
   music__item_menu: {

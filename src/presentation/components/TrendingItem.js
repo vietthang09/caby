@@ -5,11 +5,11 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 const TrendingItem = (props) => {
   return (
     <View style={Styles.trending__item_wrapper}>
-      <View style={{ position: "relative" }}>
+      <View style={{ position: "relative"}}>
         <Image
           style={Styles.trending__item_image}
           source={{
-            uri: "https://images.pexels.com/photos/1482476/pexels-photo-1482476.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            uri: props.data.fields.image_Url,
           }}
         />
         <Ionicons
@@ -18,8 +18,6 @@ const TrendingItem = (props) => {
           name="play-circle-outline"
         />
       </View>
-      <Text style={Styles.text__title}>Arabic kuthus</Text>
-      <Text style={Styles.text__sub_title}>Beast</Text>
     </View>
   );
 };

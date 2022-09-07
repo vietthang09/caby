@@ -7,7 +7,7 @@ const Favourite = ({ navigation }) => {
   return (
     <View style={Styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
-        <MusicItem navigation={navigation} />
+        {/* <MusicItem navigation={navigation} /> */}
       </ScrollView>
     </View>
   );

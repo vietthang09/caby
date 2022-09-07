@@ -11,27 +11,24 @@ const MusicItem = (props) => {
         <Image
           style={Styles.music__item_image}
           source={{
-            uri: "https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            uri: props.data.fields.image_Url,
           }}
         />
       </TouchableOpacity>
       <View style={Styles.music__item_body_wrapper}>
-        <View>
+        <View style={{ flex: 1 }}>
           <Text
+            numberOfLines={2}
             onPress={() => props.navigation.navigate("PlayMusic")}
             style={Styles.music__item_title}
           >
-            Oru Devathai
+            {props.data.fields.name}
           </Text>
-          <Text style={Styles.music__item_views}>2.5 M plays</Text>
+          <Text style={Styles.music__item_views}>
+            {props.data.fields.listeningFrequency} plays
+          </Text>
         </View>
-        <View style={{ flexDirection: "row", alignItems: "center" }}>
-          <Ionicons name="heart-outline" style={Styles.music__item_favourite} />
-          <Ionicons
-            name="ellipsis-vertical-outline"
-            style={Styles.music__item_menu}
-          />
-        </View>
+        <Ionicons name="heart-outline" style={Styles.music__item_favourite} />
       </View>
     </View>
   );
