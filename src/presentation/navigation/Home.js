@@ -20,7 +20,7 @@ const Home = ({ navigation }) => {
         {/* Categories Section */}
         <View>
           <Text style={Styles.text__heading}>Categories</Text>
-          <CategoriesSection />
+          <CategoriesSection navigation={navigation} />
         </View>
       </ScrollView>
     </View>

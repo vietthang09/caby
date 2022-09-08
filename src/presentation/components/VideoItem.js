@@ -12,21 +12,17 @@ const VideoItem = (props) => {
         <Image
           style={Styles.music__item_image}
           source={{
-            uri: "https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            uri: props.data.thumbnail,
           }}
         />
       </TouchableOpacity>
-      <View style={Styles.music__item_body_wrapper}>
-        <View>
-          <Text style={Styles.music__item_title}>Oru Devathai</Text>
-          <Text style={Styles.music__item_views}>2.5 M plays</Text>
-        </View>
-        <View style={{ flexDirection: "row", alignItems: "center" }}>
-          <Ionicons
-            name="ellipsis-vertical-outline"
-            style={Styles.music__item_menu}
-          />
-        </View>
+      <View style={Styles.video__item_body_wrapper}>
+        <Text numberOfLines={2} style={Styles.music__item_title}>
+          {props.data.title}
+        </Text>
+        <Text style={Styles.music__item_views}>
+          {props.data.viewCountText} plays
+        </Text>
       </View>
     </View>
   );

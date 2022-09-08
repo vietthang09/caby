@@ -1,4 +1,4 @@
-import { SafeAreaView } from "react-native";
+import { ActivityIndicator, FlatList, SafeAreaView } from "react-native";
 import * as API from "../../core/api/Api";
 
 const { Text, View, TextInput, ScrollView } = require("react-native");
@@ -7,7 +7,9 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import VideoItem from "../components/VideoItem";
 import { useEffect, useState } from "react";
 import useDebounce from "../Hooks/useDebounce";
+import ColorScheme from "../../core/style/ColorScheme";
 const Search = ({ navigation }) => {
+  const [isLoading, setLoading] = useState(true);
   const [value, setValue] = useState();
   const query = useDebounce(value, 1500);
   const [data, setData] = useState();
@@ -17,12 +19,18 @@ const Search = ({ navigation }) => {
   }, [query]);
   const fetchData = async (query) => {
     if (query) {
-      const data = await API.searchVideo(query);
-      return setData(data);
+      try {
+        const data = await API.searchVideo(query);
+        return setData(data);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setLoading(false);
+      }
+    } else {
+      setData([]);
     }
   };
-
-  console.log(data);
 
   return (
     <View style={Styles.container}>
@@ -30,7 +38,6 @@ const Search = ({ navigation }) => {
       <View style={Styles.search_bar__wrapper}>
         <Ionicons style={Styles.search_bar__icon} name="search-outline" />
         <TextInput
-          keyboardType=""
           style={{ width: "100%" }}
           placeholder="Search"
           value={value}
@@ -38,14 +45,18 @@ const Search = ({ navigation }) => {
         />
       </View>
       {/* Search results */}
-      <View style={Styles.search_result__wrapper}>
-        <ScrollView showsVerticalScrollIndicator={false}>
-          <VideoItem navigation={navigation} />
-          <VideoItem navigation={navigation} />
-          <VideoItem navigation={navigation} />
-          <VideoItem navigation={navigation} />
-        </ScrollView>
-      </View>
+      {isLoading ? (
+        <></>
+      ) : (
+        <FlatList
+          showsVerticalScrollIndicator={false}
+          data={data.data}
+          keyExtractor={({ id }, index) => id}
+          renderItem={({ item }) => {
+            return <VideoItem data={item} navigation={navigation} />;
+          }}
+        />
+      )}
     </View>
   );
 };

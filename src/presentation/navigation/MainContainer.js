@@ -9,6 +9,7 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import Search from "./Search";
 import Trending from "./Trending";
 import PlayVideo from "./PlayVideo";
+import Category from "./Category";
 const Tab = createBottomTabNavigator();
 
 const HomeStack = createNativeStackNavigator();
@@ -30,6 +31,14 @@ function HomeStackScreen() {
         }}
         name="PlayMusic"
         component={PlayMusic}
+      />
+      <HomeStack.Screen
+        options={{
+          statusBarColor: ColorScheme.background,
+          navigationBarColor: ColorScheme.background,
+        }}
+        name="Category"
+        component={Category}
       />
     </HomeStack.Navigator>
   );

@@ -3,6 +3,7 @@ import MusicItem from "../components/MusicItem";
 import Styles from "../../core/style/Styles";
 import * as API from "../../core/api/Api";
 import { listMusic } from "../../core/api/Api";
+import ColorScheme from "../../core/style/ColorScheme";
 const {
   Text,
   View,
@@ -31,7 +32,7 @@ const Trending = ({ navigation }) => {
   return (
     <View style={Styles.container}>
       {isLoading ? (
-        <ActivityIndicator />
+        <ActivityIndicator color={ColorScheme.primary} />
       ) : (
         <FlatList
           showsVerticalScrollIndicator={false}

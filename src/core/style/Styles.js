@@ -149,6 +149,13 @@ const Styles = StyleSheet.create({
   },
   // End Music Item
 
+  // Video Item
+  video__item_body_wrapper: {
+    marginLeft: 10,
+    flex: 1,
+  },
+  // End Video Item
+
   // Search Screen
   search_bar__wrapper: {
     backgroundColor: ColorScheme.white,
