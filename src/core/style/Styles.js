@@ -4,7 +4,7 @@ const WIDTH = Dimensions.get("window").width;
 const HEIGHT = Dimensions.get("window").height;
 const Styles = StyleSheet.create({
   container: {
-    padding: 8,
+    paddingHorizontal: 8,
     flex: 1,
     backgroundColor: ColorScheme.background,
     marginTop: StatusBar.currentHeight,
@@ -140,7 +140,6 @@ const Styles = StyleSheet.create({
   music__item_favourite: {
     fontSize: 26,
     marginLeft: 10,
-    color: ColorScheme.white,
   },
   music__item_menu: {
     marginLeft: 10,

@@ -1,7 +1,19 @@
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import Styles from "../../core/style/Styles";
 import Ionicons from "react-native-vector-icons/Ionicons";
+import { useState } from "react";
+import ColorScheme from "../../core/style/ColorScheme";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 const MusicItem = (props) => {
+  const [addFavourite, setAddFavourite] = useState(false);
+  const _addFavourite = async () => {
+    try {
+      await AsyncStorage.setItem("music", JSON.stringify(props.data));
+      setAddFavourite(!addFavourite);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <View style={Styles.music__item_wrapper}>
       <TouchableOpacity
@@ -28,7 +40,15 @@ const MusicItem = (props) => {
             {props.data.fields.listeningFrequency} plays
           </Text>
         </View>
-        <Ionicons name="heart-outline" style={Styles.music__item_favourite} />
+        <TouchableOpacity activeOpacity={0.5} onPress={() => _addFavourite()}>
+          <Ionicons
+            name={addFavourite ? "heart" : "heart-outline"}
+            style={[
+              Styles.music__item_favourite,
+              { color: addFavourite ? ColorScheme.primary : ColorScheme.white },
+            ]}
+          />
+        </TouchableOpacity>
       </View>
     </View>
   );

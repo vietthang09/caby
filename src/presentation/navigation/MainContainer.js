@@ -21,7 +21,7 @@ function HomeStackScreen() {
           statusBarColor: ColorScheme.background,
           navigationBarColor: ColorScheme.background,
         }}
-        name="Home"
+        name="HomeStack"
         component={Home}
       />
       <HomeStack.Screen
@@ -29,7 +29,7 @@ function HomeStackScreen() {
           statusBarColor: ColorScheme.background,
           navigationBarColor: ColorScheme.background,
         }}
-        name="PlayMusic"
+        name="PlayMusicStack"
         component={PlayMusic}
       />
       <HomeStack.Screen
@@ -37,7 +37,7 @@ function HomeStackScreen() {
           statusBarColor: ColorScheme.background,
           navigationBarColor: ColorScheme.background,
         }}
-        name="Category"
+        name="CategoryStack"
         component={Category}
       />
     </HomeStack.Navigator>
@@ -53,7 +53,7 @@ function TrendingStackScreen() {
           statusBarColor: ColorScheme.background,
           navigationBarColor: ColorScheme.background,
         }}
-        name="Trending"
+        name="TrendingStack"
         component={Trending}
       />
       <TrendingStack.Screen
@@ -61,7 +61,7 @@ function TrendingStackScreen() {
           statusBarColor: ColorScheme.background,
           navigationBarColor: ColorScheme.background,
         }}
-        name="PlayMusic"
+        name="PlayMusicStack"
         component={PlayMusic}
       />
     </TrendingStack.Navigator>
@@ -77,7 +77,7 @@ function FavouriteStackScreen() {
           statusBarColor: ColorScheme.background,
           navigationBarColor: ColorScheme.background,
         }}
-        name="Favourite"
+        name="FavouriteStack"
         component={Favourite}
       />
       <FavouriteStack.Screen
@@ -85,7 +85,7 @@ function FavouriteStackScreen() {
           statusBarColor: ColorScheme.background,
           navigationBarColor: ColorScheme.background,
         }}
-        name="PlayMusic"
+        name="PlayMusicStack"
         component={PlayMusic}
       />
     </FavouriteStack.Navigator>
@@ -101,7 +101,7 @@ function SearchStackScreen() {
           statusBarColor: ColorScheme.background,
           navigationBarColor: ColorScheme.background,
         }}
-        name="Search"
+        name="SearchStack"
         component={Search}
       />
       <SearchStack.Screen
@@ -109,7 +109,7 @@ function SearchStackScreen() {
           statusBarColor: ColorScheme.background,
           navigationBarColor: ColorScheme.background,
         }}
-        name="PlayVideo"
+        name="PlayVideoStack"
         component={PlayVideo}
       />
     </SearchStack.Navigator>

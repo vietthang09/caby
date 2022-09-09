@@ -6,7 +6,7 @@ const CategoryItem = (props) => {
     <TouchableOpacity
       activeOpacity={0.5}
       onPress={() => {
-        props.navigation.navigate("Category", {
+        props.navigation.navigate("CategoryStack", {
           id: props.data.id,
           title: props.data.title,
         });
