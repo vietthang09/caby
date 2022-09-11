@@ -13,7 +13,7 @@ const TrendingItem = (props) => {
           }}
         />
         <Ionicons
-          onPress={() => props.navigation.navigate("PlayMusic")}
+          onPress={() => props.navigation.navigate("PlayMusicStack")}
           style={Styles.trending__item_play}
           name="play-circle-outline"
         />

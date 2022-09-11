@@ -8,7 +8,7 @@ const MusicItem = (props) => {
   const [addFavourite, setAddFavourite] = useState(false);
   const _addFavourite = async () => {
     try {
-      await AsyncStorage.setItem("music", JSON.stringify(props.data));
+      // await AsyncStorage.setItem("music", JSON.stringify(props.data));
       setAddFavourite(!addFavourite);
     } catch (error) {
       console.log(error);
@@ -18,7 +18,7 @@ const MusicItem = (props) => {
     <View style={Styles.music__item_wrapper}>
       <TouchableOpacity
         activeOpacity={0.5}
-        onPress={() => props.navigation.navigate("PlayMusic")}
+        onPress={() => props.navigation.navigate("PlayMusicStack")}
       >
         <Image
           style={Styles.music__item_image}
@@ -31,7 +31,7 @@ const MusicItem = (props) => {
         <View style={{ flex: 1 }}>
           <Text
             numberOfLines={2}
-            onPress={() => props.navigation.navigate("PlayMusic")}
+            onPress={() => props.navigation.navigate("PlayMusicStack")}
             style={Styles.music__item_title}
           >
             {props.data.fields.name}

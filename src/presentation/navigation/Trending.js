@@ -39,7 +39,7 @@ const Trending = ({ navigation }) => {
           data={data.records}
           keyExtractor={({ id }, index) => id}
           renderItem={({ item }) => {
-            return <MusicItem data={item} />;
+            return <MusicItem data={item} navigation={navigation} />;
           }}
         />
       )}
