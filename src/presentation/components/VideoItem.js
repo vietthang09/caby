@@ -7,7 +7,11 @@ const VideoItem = (props) => {
     <View style={Styles.music__item_wrapper}>
       <TouchableOpacity
         activeOpacity={0.5}
-        onPress={() => props.navigation.navigate("PlayVideoStack")}
+        onPress={() =>
+          props.navigation.navigate("PlayVideoStack", {
+            data: props.data,
+          })
+        }
       >
         <Image
           style={Styles.music__item_image}
