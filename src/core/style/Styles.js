@@ -149,9 +149,50 @@ const Styles = StyleSheet.create({
   // End Music Item
 
   // Video Item
+  video__item_wrapper: {
+    marginTop: 10,
+    alignItems: "center",
+  },
+  video__item_image: {
+    width: WIDTH,
+    height: HEIGHT * 0.3,
+    resizeMode: "cover",
+  },
   video__item_body_wrapper: {
-    marginLeft: 10,
+    marginTop: 10,
+    marginLeft: 0,
     flex: 1,
+    flexDirection: "row",
+  },
+  video__item_duration: {
+    position: "absolute",
+    bottom: 5,
+    right: 15,
+    backgroundColor: ColorScheme.dark,
+    color: ColorScheme.white,
+    fontSize: 11,
+    padding: 3,
+    borderRadius: 4,
+  },
+  video__item_thumnail_channel: {
+    height: 40,
+    width: 40,
+    borderRadius: 100,
+  },
+  video__item_info_wrapper: {
+    flex: 1,
+    paddingLeft: 10,
+  },
+  video__item_title: {
+    color: ColorScheme.white,
+    fontSize: 16,
+    fontWeight: "700",
+  },
+  video__item_views: {
+    marginTop: 5,
+    color: ColorScheme.white,
+    fontSize: 11,
+    fontWeight: "100",
   },
   // End Video Item
 
@@ -275,7 +316,6 @@ const Styles = StyleSheet.create({
     backgroundColor: ColorScheme.white,
   },
   play_video__video_wrapper: {
-    borderRadius: 18,
     alignSelf: "center",
     width: WIDTH,
     height: HEIGHT * 0.4,
