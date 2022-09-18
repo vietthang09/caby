@@ -38,6 +38,7 @@ const Search = ({ navigation }) => {
       <View style={Styles.search_bar__wrapper}>
         <Ionicons style={Styles.search_bar__icon} name="search-outline" />
         <TextInput
+          keyboardType="web-search"
           style={{ width: "100%" }}
           placeholder="Search"
           value={value}

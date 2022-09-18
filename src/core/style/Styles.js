@@ -362,6 +362,18 @@ const Styles = StyleSheet.create({
     borderRadius: 18,
     marginEnd: 10,
   },
+  play_video__channel_wrapper: {
+    marginTop: 20,
+    alignItems: "center",
+    flexDirection: "row"
+  },
+  play_video__channel_name: {
+    marginStart: 10,
+    paddingVertical: 10,
+    color: ColorScheme.dark,
+    fontSize: 16,
+    fontWeight: "bold",
+  },
 
   // End Play Video Screen
 });

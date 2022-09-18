@@ -1,32 +1,24 @@
 import {
   ActivityIndicator,
-  AppState,
-  FlatList,
+  Dimensions,
   Image,
-  ProgressBarAndroid,
   ScrollView,
   Text,
-  ToastAndroid,
   View,
 } from "react-native";
 import Styles from "../../core/style/Styles";
-import Ionicons from "react-native-vector-icons/Ionicons";
 import ColorScheme from "../../core/style/ColorScheme";
 import { Video } from "expo-av";
-import React, { useState, useEffect, useRef } from "react";
-import { streamVideo } from "../../core/api/Api";
+import React, { useState, useEffect } from "react";
 import * as API from "../../core/api/Api";
 const PlayVideo = ({ route }) => {
-  const appState = useRef(AppState.currentState);
-  const [appStateVisibale, setAppStateVisible] = useState(appState.current);
-
   const [isLoading, setLoading] = useState(true);
   const { data, setData } = route.params;
   const [videoLink, setVideoLink] = useState();
   const [videoStream, setVideoStream] = useState([]);
-  const [resolution, setResolution] = useState();
-  const [status, setStatus] = useState([]);
-
+  const [resolution, setResolution] = useState(17);
+  const [status, setStatus] = useState({});
+  const videoPlayer = React.useRef();
   const streamVideo = async () => {
     try {
       const response = await API.streamVideo(data.id);
@@ -45,41 +37,18 @@ const PlayVideo = ({ route }) => {
     switch (itag) {
       case 17:
         setVideoLink(videoStream[0].url);
-        status.seekMillisToleranceAfter(currentPosition);
         break;
       case 18:
         setVideoLink(videoStream[1].url);
-        status.seekMillisToleranceAfter(currentPosition);
         break;
       case 22:
         setVideoLink(videoStream[2].url);
-        status.seekMillisToleranceAfter(currentPosition);
         break;
 
       default:
         break;
     }
   };
-
-  useEffect(() => {
-    const subscription = AppState.addEventListener("change", (nextAppState) => {
-      if (
-        appState.current.match(/inactive|background/) &&
-        nextAppState === "active"
-      ) {
-        console.log("App has come to the foreground!");
-      }
-
-      appState.current = nextAppState;
-      setAppStateVisible(appState.current);
-      ToastAndroid.show("background time", ToastAndroid.SHORT);
-      console.log("AppState", appState.current);
-    });
-
-    return () => {
-      subscription.remove();
-    };
-  }, []);
 
   useEffect(() => {
     streamVideo();
@@ -95,9 +64,10 @@ const PlayVideo = ({ route }) => {
             <Video
               style={Styles.play_video__video_wrapper}
               source={{ uri: videoLink }}
+              resizeMode="cover"
               useNativeControls
-              resizeMode="contain"
-              isLooping
+              shouldPlay
+              onPlaybackStatusUpdate={(status) => setStatus(() => status)}
             />
           </View>
           {/* Detail */}
@@ -114,23 +84,54 @@ const PlayVideo = ({ route }) => {
               </Text>
             </View>
             {/* Resolution */}
-            <FlatList
+            <ScrollView
               style={Styles.play_video__resolution_wrapper}
-              showsHorizontalScrollIndicator={false}
               horizontal
-              data={videoStream}
-              renderItem={({ item }) => {
-                return (
-                  <Text
-                    onPress={() => {}}
-                    style={Styles.play_video__resolution_item}
-                  >
-                    {item.qualityLabel}
-                  </Text>
-                );
-              }}
-            />
-            <Text>{status.positionMillis}</Text>
+            >
+              <Text
+                onPress={() => changeResolution(17)}
+                style={
+                  resolution == 17
+                    ? Styles.play_video__resolution_item_active
+                    : Styles.play_video__resolution_item
+                }
+              >
+                144p
+              </Text>
+              <Text
+                onPress={() => changeResolution(18)}
+                style={
+                  resolution == 18
+                    ? Styles.play_video__resolution_item_active
+                    : Styles.play_video__resolution_item
+                }
+              >
+                360p
+              </Text>
+              <Text
+                onPress={() => changeResolution(22)}
+                style={
+                  resolution == 22
+                    ? Styles.play_video__resolution_item_active
+                    : Styles.play_video__resolution_item
+                }
+              >
+                720p
+              </Text>
+            </ScrollView>
+
+            {/* Channel Info */}
+            <View style={Styles.play_video__channel_wrapper}>
+              <Image
+                style={Styles.video__item_thumnail_channel}
+                source={{
+                  uri: data.thumbnailChannel,
+                }}
+              />
+              <Text style={Styles.play_video__channel_name}>
+                {data.ownerChannelText}
+              </Text>
+            </View>
           </View>
         </ScrollView>
       )}
